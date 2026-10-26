@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101010">
+  <meta name="description" content="Super Meat Shop — Chicken, Mutton & Fish. Order on WhatsApp for shop pickup or local delivery across Kanpur, subject to availability.">
+  <title>Super Meat Shop | Chicken, Mutton & Fish</title>
+  <style>
+    :root{--bg:#101010;--panel:#191919;--gold:#d6ad55;--gold2:#f2d88b;--text:#f8f5ed;--muted:#bcb7aa;--line:#3a3324}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1100px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(16,16,16,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+    .brand{font-weight:900;letter-spacing:.07em;font-size:1.05rem}.brand span{color:var(--gold)}
+    .navlinks{display:flex;gap:20px;color:var(--muted);font-size:.92rem}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--gold);color:#17130a;font-weight:800;padding:12px 18px;border-radius:999px;border:0;cursor:pointer;transition:.2s}
+    .btn:hover{background:var(--gold2);transform:translateY(-1px)}
+    .btn-outline{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+    .hero{padding:76px 0 64px;background:radial-gradient(ellipse at 80% 20%,#493719 0,transparent 36%),linear-gradient(135deg,#151515,#0d0d0d)}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+    .eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.2em;font-size:.78rem;font-weight:800}
+    h1{font-size:clamp(2.5rem,6vw,4.8rem);line-height:1.04;letter-spacing:-.04em;margin:14px 0 18px}
+    h1 em{font-style:normal;color:var(--gold)}
+    .lead{color:var(--muted);font-size:1.1rem;max-width:560px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .hero-art{min-height:320px;border:1px solid #6d552b;border-radius:28px;background:linear-gradient(145deg,#2c2417,#121212 65%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;box-shadow:0 24px 70px #0008}
+    .seal{width:128px;height:128px;border:2px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:2.4rem;margin-bottom:18px;box-shadow:inset 0 0 0 7px #d6ad5518}
+    .hero-art strong{font-size:1.3rem;letter-spacing:.12em}.hero-art small{color:var(--muted);margin-top:8px}
+    section{padding:62px 0}
+    .section-head{text-align:center;max-width:650px;margin:0 auto 30px}
+    h2{font-size:clamp(1.8rem,4vw,2.6rem);margin:0 0 10px}
+    .section-head p,.muted{color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:24px;display:flex;flex-direction:column;min-height:230px}
+    .emoji{font-size:2.2rem}.card h3{font-size:1.3rem;margin:12px 0 6px}.card p{color:var(--muted);margin:0 0 18px;flex:1}
+    .card .btn{width:100%}
+    .notice{border:1px solid var(--line);background:#17150f;padding:18px 20px;border-radius:16px;color:var(--muted);font-size:.94rem}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .step{padding:22px;border-left:2px solid var(--gold);background:#151515;border-radius:0 16px 16px 0}
+    .step b{color:var(--gold);display:block;margin-bottom:7px}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+    .contact-box{padding:26px;border-radius:20px;background:var(--panel);border:1px solid var(--line)}
+    label{display:block;margin:14px 0 6px;color:var(--muted);font-size:.92rem}
+    input,select,textarea{width:100%;padding:12px 13px;border-radius:10px;border:1px solid #4a4335;background:#101010;color:var(--text);font:inherit}
+    textarea{min-height:90px;resize:vertical}
+    .form-help{font-size:.82rem;color:var(--muted);margin-top:10px}
+    footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.9rem}
+    .foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .float-wa{position:fixed;right:18px;bottom:18px;z-index:20;box-shadow:0 8px 30px #0009}
+    @media(max-width:760px){.navlinks{display:none}.hero{padding:52px 0}.hero-grid,.contact-grid{grid-template-columns:1fr}.hero-art{min-height:230px}.cards,.steps{grid-template-columns:1fr}.card{min-height:auto}section{padding:48px 0}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home">SUPER <span>MEAT SHOP</span></a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#products">Our Products</a><a href="#how">How to Order</a><a href="#contact">Contact</a>
+    </nav>
+    <a class="btn" href="#contact">Order Now</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow">Chicken • Mutton • Fish</div>
+        <h1>Good food starts with <em>great choice.</em></h1>
+        <p class="lead">Welcome to Super Meat Shop. Choose your favourite items and place your order on WhatsApp for shop pickup or local delivery across Kanpur, subject to availability.</p>
+        <div class="actions">
+          <a class="btn" href="#products">Explore Products</a>
+          <a class="btn btn-outline" href="https://wa.me/919696327186" target="_blank" rel="noopener">WhatsApp Us</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Super Meat Shop branding">
+        <div class="seal">SMS</div>
+        <strong>SUPER MEAT SHOP</strong>
+        <small>CHICKEN · MUTTON · FISH</small>
+      </div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Our selection</div>
+        <h2>Choose what you love</h2>
+        <p>Tap a product to start your order on WhatsApp. Confirm today’s price, cut, quantity and availability with the shop.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="emoji" aria-hidden="true">🍗</div>
+          <h3>Chicken</h3>
+          <p>Ask us about available chicken cuts and quantity.</p>
+          <button class="btn" onclick="orderProduct('Chicken')">Order Chicken</button>
+        </article>
+        <article class="card">
+          <div class="emoji" aria-hidden="true">🥩</div>
+          <h3>Mutton</h3>
+          <p>Message us to check availability, cut and current price.</p>
+          <button class="btn" onclick="orderProduct('Mutton')">Order Mutton</button>
+        </article>
+        <article class="card">
+          <div class="emoji" aria-hidden="true">🐟</div>
+          <h3>Fish</h3>
+          <p>Ask about available fish varieties and quantity.</p>
+          <button class="btn" onclick="orderProduct('Fish')">Order Fish</button>
+        </article>
+      </div>
+      <p class="notice" style="margin-top:20px">Prices and availability can change. Please confirm the current price, delivery availability and estimated timing on WhatsApp before placing your order.</p>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Simple & convenient</div>
+        <h2>How to order</h2>
+        <p>No account needed. Send your order directly to the shop.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><b>01 — Choose</b>Pick Chicken, Mutton or Fish and tell us your quantity.</div>
+        <div class="step"><b>02 — Confirm</b>We’ll confirm price, availability and pickup/delivery details on WhatsApp.</div>
+        <div class="step"><b>03 — Receive</b>Collect from the shop or ask about local delivery across Kanpur.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="eyebrow">Get in touch</div>
+        <h2>Place your order</h2>
+        <p class="muted">Fill in the details and tap the button. WhatsApp will open with a prepared message for you to send.</p>
+        <p><strong>WhatsApp / Phone:</strong><br><a href="https://wa.me/919696327186" target="_blank" rel="noopener" style="color:var(--gold)">+91 96963 27186</a></p>
+        <p><strong>Service area:</strong><br>Kanpur — local delivery subject to address and availability.</p>
+        <p><strong>Pickup:</strong><br>Shop pickup available. Please contact us for the shop address and pickup timing.</p>
+      </div>
+      <div class="contact-box">
+        <form id="orderForm">
+          <label for="product">What would you like?</label>
+          <select id="product" required>
+            <option value="">Choose a product</option><option>Chicken</option><option>Mutton</option><option>Fish</option><option>Chicken, Mutton & Fish</option>
+          </select>
+          <label for="quantity">Quantity / cut</label>
+          <input id="quantity" placeholder="e.g. 1 kg, curry cut" required>
+          <label for="fulfilment">Pickup or delivery</label>
+          <select id="fulfilment" required>
+            <option value="">Choose one</option><option>Shop pickup</option><option>Local delivery in Kanpur</option>
+          </select>
+          <label for="address">Delivery area/address (if delivery)</label>
+          <input id="address" placeholder="Area or landmark in Kanpur">
+          <label for="notes">Extra instructions (optional)</label>
+          <textarea id="notes" placeholder="Preferred timing or other request"></textarea>
+          <button class="btn" style="width:100%;margin-top:18px" type="submit">Continue on WhatsApp</button>
+          <div class="form-help">Your order is not confirmed until the shop replies on WhatsApp.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>© <span id="year"></span> Super Meat Shop. All rights reserved.</div>
+    <div>Chicken • Mutton • Fish | Kanpur</div>
+  </div>
+</footer>
+<a class="btn float-wa" href="https://wa.me/919696327186" target="_blank" rel="noopener" aria-label="Chat with Super Meat Shop on WhatsApp">WhatsApp Order</a>
+<script>
+  const WHATSAPP_NUMBER = "919696327186";
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  function openWhatsApp(message) {
+    const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
+    window.open(url, "_blank", "noopener");
+  }
+  function orderProduct(product) {
+    document.getElementById("product").value = product;
+    document.getElementById("contact").scrollIntoView({behavior:"smooth"});
+    document.getElementById("quantity").focus({preventScroll:true});
+  }
+  document.getElementById("orderForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+    const product = document.getElementById("product").value;
+    const quantity = document.getElementById("quantity").value.trim();
+    const fulfilment = document.getElementById("fulfilment").value;
+    const address = document.getElementById("address").value.trim();
+    const notes = document.getElementById("notes").value.trim();
+    let message = "Hello Super Meat Shop! I'd like to place an order.%0A";
+    message = "Hello Super Meat Shop! I'd like to place an order.\n"
+      + "Product: " + product + "\n"
+      + "Quantity / cut: " + quantity + "\n"
+      + "Preference: " + fulfilment + "\n"
+      + (address ? "Area/address: " + address + "\n" : "")
+      + (notes ? "Extra instructions: " + notes + "\n" : "")
+      + "\nPlease confirm current price, availability and timing.";
+    openWhatsApp(message);
+  });
+</script>
+</body>
+</html>
